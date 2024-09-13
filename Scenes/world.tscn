@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvj7p0fjwljgs"]
+[gd_scene load_steps=5 format=3 uid="uid://bvj7p0fjwljgs"]
 
+[ext_resource type="Script" path="res://Scenes/world.gd" id="1_b05u8"]
 [ext_resource type="PackedScene" uid="uid://dxc6bok87x4tf" path="res://Scenes/player.tscn" id="1_xyiu5"]
+[ext_resource type="PackedScene" uid="uid://bf8nmsueloolu" path="res://Scenes/mob.tscn" id="2_l6jmw"]
 
 [sub_resource type="Curve2D" id="Curve2D_aetfb"]
 _data = {
@@ -9,6 +11,8 @@ _data = {
 point_count = 5
 
 [node name="World" type="Node2D"]
+script = ExtResource("1_b05u8")
+mob_scene = ExtResource("2_l6jmw")
 
 [node name="Player" parent="." instance=ExtResource("1_xyiu5")]
 position = Vector2(236, 314)
@@ -29,3 +33,5 @@ position = Vector2(240, 450)
 curve = SubResource("Curve2D_aetfb")
 
 [node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
+
+[connection signal="hit" from="Player" to="." method="game_over"]

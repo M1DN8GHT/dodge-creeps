@@ -49,6 +49,7 @@ radius = 36.0
 height = 100.0
 
 [node name="Mob" type="RigidBody2D"]
+position = Vector2(58, 42)
 collision_mask = 0
 gravity_scale = 0.0
 script = ExtResource("1_owlvg")
@@ -56,8 +57,7 @@ script = ExtResource("1_owlvg")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_8wi0g")
-animation = &"fly"
-frame_progress = 0.129761
+animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
